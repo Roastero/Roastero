@@ -1,0 +1,18 @@
+'use strict'
+outDir = 'build/'
+module.exports =
+  host: 'localhost'
+  port: 3000
+  appDir: 'app'
+  unitTestDir: 'app'
+  buildTestDir: outDir + 'test/'
+  buildDir: outDir + 'app/'
+  buildComponents: outDir + 'app/components/'
+  buildCss: outDir + 'app/css/'
+  buildFonts: outDir + 'app/fonts/'
+  buildImages: outDir + 'app/images/'
+  buildJs: outDir + 'app/js/'
+  extDir: outDir + 'app/vendor/'
+  extCss: outDir + 'app/vendor/css/'
+  extFonts: outDir + 'app/vendor/fonts/'
+  extJs: outDir + 'app/vendor/js/'

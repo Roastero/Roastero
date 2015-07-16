@@ -1,0 +1,14 @@
+{
+  "generator-ng-poly": {
+    "appScript": "coffee",
+    "controllerAs": true,
+    "e2eTestFramework": "jasmine",
+    "markup": "html",
+    "ngRoute": false,
+    "structure": "module-only",
+    "style": "less",
+    "testFramework": "jasmine",
+    "testScript": "coffee",
+    "lastUsedModule": "roaster"
+  }
+}

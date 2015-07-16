@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang='en' data-ng-app='roastero'>
+  <head>
+    <title>Roastero</title>
+    <meta name='viewport' content='width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes'>
+    <!-- inject:head:js -->
+    <!-- endinject -->
+    <!-- inject:html -->
+    <!-- endinject -->
+    <!-- bower:css -->
+    <!-- endbower -->
+    <!-- inject:css -->
+    <!-- endinject -->
+  </head>
+  <body>
+
+    <div class='navbar navbar-inverse' role='navigation' data-bs-navbar data-bs-collapse data-start-collapsed='true'>
+      <div class='container'>
+        <div class='navbar-header'>
+          <button class='navbar-toggle collapsed' type='button' data-bs-collapse-toggle>
+            <span class='sr-only'>Toggle Navigation</span>
+            <span class='icon-bar'></span>
+            <span class='icon-bar'></span>
+            <span class='icon-bar'></span>
+          </button>
+          <a class='navbar-brand' href='#/'>Roastero</a>
+        </div>
+        <div class='navbar-collapse collapse' data-bs-collapse-target>
+          <ul class='nav navbar-nav'>
+            <li data-ui-sref-active='active'>
+              <a data-ui-sref='home'>Home</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class='container'>
+      <div data-ui-view>
+
+      </div>
+    </div>
+
+    <!-- bower:js -->
+    <!-- endbower -->
+    <!-- inject:js -->
+    <!-- endinject -->
+  </body>
+</html>
