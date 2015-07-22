@@ -1,0 +1,14 @@
+<div class="roastGraph">
+  <div class="graph"></div>
+  <div class="legend" ng-if="LegendEnabled">
+    <div class="series-container">
+      <div ng-repeat="series in legendSeries" class="series">
+        <a ng-click="selectSeries(series)">
+          <span ng-bind-html="seriesLine(series)"></span>
+          <span ng-style="seriesStyle(series)">{{series.label}}</span>
+        </a>
+      </div>
+    </div>
+  </div>
+<div class="roastGraphPop"></div>
+</div>

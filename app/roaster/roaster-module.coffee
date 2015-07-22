@@ -9,4 +9,5 @@
 angular
   .module 'roaster', [
     'ui.router',
+    'ngSanitize'
   ]
