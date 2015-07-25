@@ -23,14 +23,14 @@ class RoastGraph
         data: '='
         options: '='
         legend: '=?'
-      templateUrl: 'roaster/roast-graph-directive.tpl.html'
+      templateUrl: 'roaster/roast-graph/roast-graph-directive.tpl.html'
       replace: false
       controllerAs: 'roastGraphDirective'
       controller: ->
         vm = @
         vm.name = 'roastGraphDirective'
       link: (scope, element, attrs) ->
-        scope.LegendEnabled = true
+        scope.LegendEnabled = false
 
         parent = element.parent()
         mainDiv = element.children()[0]
@@ -68,6 +68,10 @@ class RoastGraph
           options.file = scope.data
           options.highlightCallback = scope.highlightCallback
           options.unhighlightCallback = scope.unhighlightCallback
+          if scope.data[0].length < 3
+            scope.LegendEnabled = false
+          else
+            scope.LegendEnabled = true
           if options.showPopover == undefined
             options.showPopover = true
           if scope.legend != undefined

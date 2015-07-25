@@ -13,16 +13,9 @@ class RoastGraphCtrl
 
     @graph =
       data: []
-      options: labels: [
-        'x'
-        'A'
-        'B'
-      ]
+      options: labels: [ 'x', 'A' ]
       legend: series:
-        A: label: 'Series A'
-        B:
-          label: 'Series B'
-          format: 3
+        A: label: 'Temperature'
 
     base_time = Date.parse('2008/07/01')
     num = 24 * 0.25 * 365
@@ -31,7 +24,6 @@ class RoastGraphCtrl
       @graph.data.push [
         new Date(base_time + i * 3600 * 1000)
         i + 50 * i % 60
-        i * (num - i) * 4.0 / num
       ]
       i++
 

@@ -16,7 +16,7 @@ angular
             templateUrl: 'roaster/roaster.tpl.html'
 
           'roastGraph@roaster':
-            templateUrl: 'roaster/roast-graph-view.tpl.html'
+            templateUrl: 'roaster/roast-graph/roast-graph-view.tpl.html'
             controller: 'RoastGraphCtrl'
             controllerAs: 'RoastGraphCtrl'
     return
