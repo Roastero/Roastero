@@ -1,8 +1,8 @@
 'use strict'
 outDir = 'build/'
 module.exports =
-  host: 'localhost'
-  port: 3000
+  host: process.env.IP || 'localhost'
+  port: process.env.PORT || 3000
   appDir: 'app'
   unitTestDir: 'app'
   buildTestDir: outDir + 'test/'
