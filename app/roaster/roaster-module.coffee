@@ -9,5 +9,6 @@
 angular
   .module 'roaster', [
     'ui.router',
-    'ngSanitize'
+    'ngSanitize',
+    'ngWebSocket'
   ]

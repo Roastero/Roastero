@@ -28,7 +28,8 @@ class RoastGraph
       controllerAs: 'roastGraphDirective'
       controller: ->
         vm = @
-        vm.name = 'roastGraphDirective'
+        @name = 'roastGraphDirective'
+
       link: (scope, element, attrs) ->
         scope.LegendEnabled = false
 

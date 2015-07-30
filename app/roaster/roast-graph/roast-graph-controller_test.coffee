@@ -7,8 +7,9 @@ describe 'RoastGraphCtrl', ->
   beforeEach module 'roaster'
 
   beforeEach inject ($rootScope, $controller) ->
-    ctrl = $controller 'RoastGraphCtrl'
+    scope = $rootScope.$new()
+    ctrl = $controller 'RoastGraphCtrl',
+      $scope: scope
 
   it 'should have ctrlName as RoastGraphCtrl', ->
     expect(ctrl.ctrlName).toEqual 'RoastGraphCtrl'
-

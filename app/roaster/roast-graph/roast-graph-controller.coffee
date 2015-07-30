@@ -8,22 +8,28 @@
 
 ###
 class RoastGraphCtrl
-  constructor: (@$scope, @$rootScope) ->
+  constructor: ($scope, $rootScope) ->
     @ctrlName = 'RoastGraphCtrl'
 
     @graph =
       data: []
-      options: labels: [ 'x', 'A' ]
+      options:
+        labels: [ 'x', 'A' ]
+        axes:
+          x:
+            axisLabelFormatter: (d, gran) ->
+              Dygraph.zeropad(d.getMinutes()) + ":" +
+              Dygraph.zeropad(d.getSeconds());
       legend: series:
         A: label: 'Temperature'
 
-    base_time = Date.parse('2008/07/01')
+
     num = 24 * 0.25 * 365
     i = 0
     while i < num
       @graph.data.push [
-        new Date(base_time + i * 3600 * 1000)
-        i + 50 * i % 60
+        new Date(0, 0, 0, 0, 0, 0 + i)
+        200 + i
       ]
       i++
 
@@ -34,7 +40,7 @@ class RoastGraphCtrl
       @coords.concat coords
       return
 
-    @$rootScope.$on 'roastGraph_setCoords', (event, listOfCoordObjects) ->
+    $rootScope.$on 'roastGraph_setCoords', (event, listOfCoordObjects) ->
       @setCoords(listOfCoordObjects)
       return
 
@@ -42,23 +48,23 @@ class RoastGraphCtrl
       @coords.push {'time': time, 'temp': temp}
       return
 
-    @$rootScope.$on 'roastGraph_addCoord', (event, time, temp) ->
+    $rootScope.$on 'roastGraph_addCoord', (event, time, temp) ->
       @addCoord(time, temp)
       return
 
     @getCoords = () ->
       return @coords
 
-    @$rootScope.$on 'roastGraph_getCoords', (event) ->
+    $rootScope.$on 'roastGraph_getCoords', (event) ->
       coords = @getCoords()
-      @$rootScope.emit 'roastGraph_coords', coords
+      $rootScope.emit 'roastGraph_coords', coords
       return
 
     @setPointsOfInterest = (pointsOfInterest) ->
       @pointsOfInterest.concat pointsOfInterest
       return
 
-    @$rootScope.$on 'roastGraph_setPointsOfInterest', (event, pointsOfInterest) ->
+    $rootScope.$on 'roastGraph_setPointsOfInterest', (event, pointsOfInterest) ->
       @setPointsOfInterest pointsOfInterest
       return
 
@@ -66,7 +72,7 @@ class RoastGraphCtrl
       @pointsOfInterest.push {'time': time, 'note': note}
       return
 
-    @$rootScope.$on 'roastGraph_addPointOfInterest', (event, time, note) ->
+    $rootScope.$on 'roastGraph_addPointOfInterest', (event, time, note) ->
       @addPointOfInterest time, note
       return
 
@@ -75,7 +81,7 @@ class RoastGraphCtrl
       @pointsOfInterest = []
       return
 
-    @$rootScope.$on 'roastGraph_clear', () ->
+    $rootScope.$on 'roastGraph_clear', () ->
       @clear()
 
 
